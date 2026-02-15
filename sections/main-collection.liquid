@@ -1,0 +1,24 @@
+<section style="padding:100px 40px;">
+  <div style="max-width:1200px;margin:auto;">
+    
+    <h1 style="margin-bottom:40px;">
+      {{ collection.title }}
+    </h1>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px;">
+      {% for product in collection.products %}
+        <div>
+          <a href="{{ product.url }}">
+            <img 
+              src="{{ product.featured_image | image_url: width: 800 }}"
+              style="width:100%;border-radius:16px;margin-bottom:15px;"
+            >
+            <h3>{{ product.title }}</h3>
+            <p>{{ product.price | money }}</p>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
