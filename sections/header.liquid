@@ -1,35 +1,21 @@
 <header class="site-header">
   <div class="header-inner">
 
-    <!-- Logo (goes home) -->
+    <!-- Logo -->
     <a href="{{ routes.root_url }}" class="logo">
       {{ shop.name }}
     </a>
 
     <!-- Navigation -->
-    <nav class="nav">
-      <a href="/collections/all">Shop</a>
-      <a href="/pages/about">About</a>
-      <a href="{{ routes.cart_url }}" class="cart-button">
-  🛒 <span>{{ cart.item_count }}</span>
-</a>
+    <nav class="site-nav">
+  <a href="{{ routes.root_url }}">Home</a>
+  <a href="/collections/all">Shop</a>
+  <a href="/pages/about">About</a>
+</nav>
 
-    </nav>
+<a href="{{ routes.cart_url }}" class="cart-button">
+  Cart ({{ cart.item_count }})
+</a>
 
   </div>
 </header>
-
-.cart-button {
-  background: black;
-  color: white;
-  padding: 10px 16px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-size: 14px;
-  transition: transform .2s ease, opacity .2s ease;
-}
-
-.cart-button:hover {
-  transform: translateY(-1px);
-  opacity: .85;
-}

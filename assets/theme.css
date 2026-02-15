@@ -305,3 +305,21 @@ body {
 .nav a:hover {
   opacity: 0.6;
 }
+
+
+
+/* Cart Button */
+.cart-button {
+  background: #000;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+.cart-button:hover {
+  transform: translateY(-1px);
+  opacity: .85;
+}
