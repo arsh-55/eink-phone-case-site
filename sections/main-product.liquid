@@ -1,13 +1,73 @@
-<section class="product-main">
-  <h1>{{ product.title }}</h1>
-  <p>{{ product.price | money }}</p>
+<section class="premium-product">
+  <div class="premium-container">
 
-  <form method="post" action="/cart/add">
-    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-    <button type="submit" class="btn-primary">Add to Cart</button>
-  </form>
+    <!-- LEFT SIDE -->
+    <div class="premium-gallery">
+      <div class="premium-main-image">
+        <img 
+          id="MainProductImage"
+          src="{{ product.featured_image | image_url: width: 1400 }}"
+          alt="{{ product.title }}">
+      </div>
 
-  <div class="description">
-    {{ product.description }}
+      <div class="premium-thumbnails">
+        {% for image in product.images %}
+          <img
+            src="{{ image | image_url: width: 300 }}"
+            onclick="document.getElementById('MainProductImage').src='{{ image | image_url: width: 1400 }}'"
+          >
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="premium-info">
+
+      <h1 class="premium-title">
+        {{ product.title }}
+      </h1>
+
+      <div class="premium-price">
+        {{ product.price | money }}
+      </div>
+
+      <div class="premium-description">
+        {{ product.description }}
+      </div>
+
+      {% if product.variants.size > 1 %}
+      <div class="premium-variants">
+        <label>Select Model</label>
+        <select name="id" form="product-form">
+          {% for variant in product.variants %}
+            <option value="{{ variant.id }}">
+              {{ variant.title }}
+            </option>
+          {% endfor %}
+        </select>
+      </div>
+      {% endif %}
+
+      <form method="post" action="/cart/add" id="product-form" class="premium-form">
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+        
+        <div class="premium-quantity">
+          <label>Quantity</label>
+          <input type="number" name="quantity" value="1" min="1">
+        </div>
+
+        <button type="submit" class="premium-add">
+          Add to Cart
+        </button>
+      </form>
+
+      <form method="post" action="/checkout">
+        <button type="submit" class="premium-buy">
+          Buy Now
+        </button>
+      </form>
+
+    </div>
+
   </div>
 </section>
