@@ -103,3 +103,27 @@ body {
   border-radius: 8px;
   display: inline-block;
 }
+
+.hero-title {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+  font-weight: 700;
+  font-size: 4.5rem;
+  line-height: 1.05;
+  letter-spacing: -1px;
+  margin-bottom: 40px;
+}
+
+.line-one {
+  color: #ffffff;
+}
+
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    #7fb5ff 0%,
+    #8e8eff 50%,
+    #b48bff 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
