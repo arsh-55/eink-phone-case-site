@@ -119,11 +119,12 @@ body {
 
 .gradient-text {
   background: linear-gradient(
-    90deg,
-    #7fb5ff 0%,
-    #8e8eff 50%,
-    #b48bff 100%
-  );
+  90deg,
+  #6ea8ff 0%,
+  #7f6bff 50%,
+  #b16dff 100%
+);
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
