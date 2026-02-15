@@ -12,3 +12,13 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", reveal);
   reveal();
 });
+
+document.addEventListener("scroll", () => {
+  const lifestyle = document.querySelector(".lifestyle");
+  if (!lifestyle) return;
+
+  const top = lifestyle.getBoundingClientRect().top;
+  if (top < window.innerHeight - 100) {
+    lifestyle.classList.add("visible");
+  }
+});
