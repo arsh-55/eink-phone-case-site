@@ -8,13 +8,16 @@ body {
 .hero-premium {
   position: relative;
   height: 100vh;
-  background: url('{{ "hero-premium.png" | asset_url }}') center center / cover no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   overflow: hidden;
 }
+
 
 /* Dark overlay for readability */
 .hero-overlay {
