@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #fff;
+  color: #111;
+}
+
+.hero {
+  height: 100vh;
+  background: #0f0f10;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+}
+
+.statement,
+.lifestyle,
+.features,
+.featured-product,
+.product-main,
+.cart-main {
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.btn-primary {
+  background: black;
+  color: white;
+  padding: 14px 28px;
+  text-decoration: none;
+  border-radius: 8px;
+  display: inline-block;
+}
