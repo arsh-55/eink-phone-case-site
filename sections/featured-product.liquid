@@ -1,0 +1,8 @@
+<section class="featured-product">
+  {% assign product = collections.all.products.first %}
+  {% if product %}
+    <h2>{{ product.title }}</h2>
+    <p>{{ product.price | money }}</p>
+    <a href="{{ product.url }}" class="btn-primary">View Product</a>
+  {% endif %}
+</section>
