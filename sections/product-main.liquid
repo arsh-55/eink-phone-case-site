@@ -1,0 +1,13 @@
+<section class="product-main">
+  <h1>{{ product.title }}</h1>
+  <p>{{ product.price | money }}</p>
+
+  <form method="post" action="/cart/add">
+    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+    <button type="submit" class="btn-primary">Add to Cart</button>
+  </form>
+
+  <div class="description">
+    {{ product.description }}
+  </div>
+</section>
